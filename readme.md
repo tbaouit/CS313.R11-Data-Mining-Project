@@ -1,6 +1,7 @@
 # K1-POI
 
-The official implementation of K1-POI for the KDD 2026 paper **Is the Last Check-In All You Need? Next POI Recommendation: Recall and Rerank**. 📄 [Paper (PDF)](paper/k1-poi.pdf)
+The official implementation of K1-POI for the KDD 2026 paper **[Is the Last Check-In All You Need? Next POI Recommendation: Recall and Rerank](https://dl.acm.org/doi/10.1145/3770855.3817836)**. \
+[Paper (PDF)](paper/k1-poi.pdf)
 
 ## Quick Start
 
