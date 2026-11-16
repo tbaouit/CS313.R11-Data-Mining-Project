@@ -1,5 +1,13 @@
 # K1-POI
 
+## CS313.R11 Data Mining Project
+
+This project imports the official [XZJIsme/k1-poi](https://github.com/XZJIsme/k1-poi) implementation at commit `234bf2cef65d06746e0ec324a788ef770eb2fd58`. The upstream source and commit history are preserved. The destination repository was initially created with the README text “Khởi tạo”.
+
+A local NYC pipeline check completed successfully with 2 training epochs and 40 validation-search trials. See [the measured run notes](docs/NYC_PIPELINE_CHECK.md). This is a pipeline check, not a full reproduction of the paper's results.
+
+The original authors' documentation follows.
+
 The official implementation of K1-POI for the KDD 2026 paper **[Is the Last Check-In All You Need? Next POI Recommendation: Recall and Rerank](https://dl.acm.org/doi/10.1145/3770855.3817836)**. \
 [Paper (PDF)](paper/k1-poi.pdf)
 
