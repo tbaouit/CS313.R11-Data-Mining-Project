@@ -1,0 +1,49 @@
+﻿dataset,method,Acc@1,Acc@5,Acc@10,Acc@20,MRR,provenance,source,note
+NYC,DeepMove,0.1721,0.4342,0.5478,0.6292,0.2899,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,DeepMove,0.1738,0.4058,0.506,0.5897,0.2817,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,DeepMove,0.0938,0.2108,0.2679,0.3294,0.1536,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,PLSPL,0.1978,0.5112,0.6368,0.7282,0.3371,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,PLSPL,0.2173,0.4757,0.5744,0.6552,0.3353,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,PLSPL,0.1333,0.3084,0.3812,0.4549,0.217,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,GETNext,0.1846,0.4516,0.5716,0.6742,0.3074,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,GETNext,0.1408,0.3177,0.3909,0.4539,0.2247,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,GETNext,0.1079,0.2451,0.3034,0.3568,0.1731,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,AGRAN,0.1468,0.494,0.6262,0.7062,0.2971,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,AGRAN,0.1379,0.4343,0.5452,0.6319,0.2714,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,AGRAN,0.1018,0.3233,0.4139,0.4969,0.2069,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,STHGCN,0.2071,0.5077,0.63,0.7078,0.342,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,STHGCN,0.2524,0.5075,0.605,0.6777,0.3694,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,STHGCN,0.145,0.3163,0.3924,0.47,0.2291,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,SNPM,0.1795,0.4447,0.562,0.6513,0.3019,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,SNPM,0.2089,0.4639,0.5636,0.6395,0.3265,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,SNPM,0.1308,0.3014,0.3796,0.455,0.2142,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,MCLP,0.1877,0.3776,0.4761,0.6001,0.3179,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,MCLP,0.2329,0.4002,0.4788,0.5755,0.3456,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,MCLP,0.134,0.248,0.3033,0.3722,0.2153,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,TAPT,0.1211,0.4104,0.5691,0.6908,0.2552,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,TAPT,0.1049,0.334,0.4655,0.5841,0.2161,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,TAPT,0.0544,0.191,0.279,0.3819,0.1261,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,DePOI,0.1499,0.463,0.6233,0.7204,0.291,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,DePOI,0.1528,0.437,0.5489,0.6389,0.2812,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,DePOI,0.104,0.2658,0.3424,0.4265,0.1858,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,DPRL,0.2086,0.4375,0.5166,0.5771,0.3106,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,DPRL includes future-time input
+TKY,DPRL,0.2402,0.4859,0.5812,0.6546,0.3534,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,DPRL includes future-time input
+CA,DPRL,0.1465,0.2971,0.3669,0.4352,0.2209,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,DPRL includes future-time input
+NYC,DPRL (w/o Future Time),0.1677,0.4099,0.5017,0.5651,0.2776,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,DPRL (w/o Future Time),0.2223,0.4737,0.5694,0.6489,0.3374,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,DPRL (w/o Future Time),0.1224,0.2799,0.3508,0.4229,0.1995,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,REPLAY,0.2033,0.4385,0.5268,0.6049,0.3103,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,REPLAY,0.1884,0.3898,0.4707,0.5399,0.2837,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,REPLAY,0.1221,0.2402,0.2942,0.355,0.1818,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,K1-POI w/o Reranker,0.1608,0.3474,0.4351,0.52,0.2527,measured_kaggle,CA_seed42_20261119T083710_432195Z.zip/report.md,seed 42; same authors protocol; one run
+CA,K1-POI w/o Reranker (paper),0.1539,0.3465,0.4342,0.5178,0.2472,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+CA,K1-POI,0.1777,0.3602,0.4438,0.528,0.2663,measured_kaggle,CA_seed42_20261119T083710_432195Z.zip/report.md,seed 42; same authors protocol; one run
+CA,K1-POI (paper),0.1739,0.3576,0.4442,0.5242,0.2632,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,K1-POI w/o Reranker,0.2105,0.5166,0.6425,0.7297,0.348,measured_kaggle,NYC_seed42_20261119T055022_750170Z.zip/report.md,seed 42; same authors protocol; one run
+NYC,K1-POI w/o Reranker (paper),0.2129,0.5148,0.6397,0.7303,0.3496,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+NYC,K1-POI,0.2286,0.5255,0.6417,0.7282,0.3618,measured_kaggle,NYC_seed42_20261119T055022_750170Z.zip/report.md,seed 42; same authors protocol; one run
+NYC,K1-POI (paper),0.2289,0.5247,0.6415,0.7288,0.3626,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,K1-POI w/o Reranker,0.2396,0.5017,0.6051,0.6848,0.3593,measured_kaggle,TKY_seed42_20261119T062917_973334Z.zip/report.md,seed 42; same authors protocol; one run
+TKY,K1-POI w/o Reranker (paper),0.2393,0.501,0.6044,0.6842,0.3586,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,
+TKY,K1-POI,0.2508,0.5127,0.6106,0.6875,0.3694,measured_kaggle,TKY_seed42_20261119T062917_973334Z.zip/report.md,seed 42; same authors protocol; one run
+TKY,K1-POI (paper),0.2496,0.5121,0.61,0.6872,0.3682,paper_reported_not_rerun,paper/k1-poi.pdf Table 1 p.6,

@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "precision": "source report rounded to 4 decimals",
+  "test_base": {
+    "Acc@1": 0.2396,
+    "Acc@5": 0.5017,
+    "Acc@10": 0.6051,
+    "Acc@20": 0.6848,
+    "MRR": 0.3593
+  },
+  "test_reranked": {
+    "Acc@1": 0.2508,
+    "Acc@5": 0.5127,
+    "Acc@10": 0.6106,
+    "Acc@20": 0.6875,
+    "MRR": 0.3694
+  },
+  "val_base": {
+    "Acc@1": 0.2142,
+    "Acc@5": 0.4741,
+    "Acc@10": 0.5804,
+    "Acc@20": 0.6656,
+    "MRR": 0.3337
+  },
+  "val_reranked": {
+    "Acc@1": 0.2266,
+    "Acc@5": 0.482,
+    "Acc@10": 0.584,
+    "Acc@20": 0.6652,
+    "MRR": 0.3442
+  },
+  "best_cfg": {
+    "lambda_time": 0.9248,
+    "lambda_user": 0.1652,
+    "lambda_dist": 0.0409,
+    "lambda_cl_sim": 0.511,
+    "sigma_min_km": 1.0,
+    "tau_km": 12.08
+  },
+  "dataset": "TKY",
+  "report_path": "/kaggle/working/k1-poi/exp_scripts/results/TKY_seed42_20261119T062917_973334Z_20261119_083656.md"
+}

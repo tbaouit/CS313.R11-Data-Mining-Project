@@ -63,3 +63,8 @@ data/processed/*
 *.tgz
 *.gz
 !data/raw/raw.tar.gz
+__pycache__/
+kaggle/dist/
+kaggle/verification_output/
+kaggle/upload/
+kaggle/remote_outputs/
