@@ -1,0 +1,23 @@
+[
+  {
+    "dataset": "CA",
+    "local_processed_sha256": "680d9e8a996c7ec7901b0151767588b661f43b2222a0e1ae96a86d888cc6412a",
+    "matches_tv1": true,
+    "matches_review_regeneration": true,
+    "source": "sha256sum printed in TV2's Kaggle notebook (2026-11-22); review regeneration = data_process.py rerun on raw.tar.gz in a separate sandbox"
+  },
+  {
+    "dataset": "NYC",
+    "local_processed_sha256": "dc8630f5e945a201c388e6e14ab48b5d67ce1a0da41f7830b37680f8cfa0c764",
+    "matches_tv1": true,
+    "matches_review_regeneration": true,
+    "source": "sha256sum printed in TV2's Kaggle notebook (2026-11-22); review regeneration = data_process.py rerun on raw.tar.gz in a separate sandbox"
+  },
+  {
+    "dataset": "TKY",
+    "local_processed_sha256": "fc3fa5068693847fd4c9845cb9fec6df45ad6c4e543b116ce6cfcf3721d91e84",
+    "matches_tv1": true,
+    "matches_review_regeneration": true,
+    "source": "sha256sum printed in TV2's Kaggle notebook (2026-11-22); review regeneration = data_process.py rerun on raw.tar.gz in a separate sandbox"
+  }
+]

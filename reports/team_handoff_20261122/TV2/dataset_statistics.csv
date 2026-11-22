@@ -1,0 +1,13 @@
+﻿dataset,split,users,pois,observed_categories,checkins,prediction_targets,provenance,note
+CA,train,3652,9756,298,193506,189854,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+CA,val,843,5212,269,16091,16091,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+CA,test,716,4370,263,11803,11803,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+CA,all,3652,9756,298,221400,217748,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+NYC,train,1047,4980,318,83228,82181,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+NYC,val,489,2385,261,9458,9458,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+NYC,test,436,2200,260,9074,9074,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+NYC,all,1047,4980,318,101760,100713,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+TKY,train,2262,7793,289,288987,286725,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+TKY,val,1454,4981,248,35232,35232,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+TKY,test,1350,4743,239,34531,34531,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits
+TKY,all,2262,7793,290,358750,356488,copied_from_TV1_identical_sha256_not_recomputed,No PAD/missing-category special tokens; val/test history includes preceding splits

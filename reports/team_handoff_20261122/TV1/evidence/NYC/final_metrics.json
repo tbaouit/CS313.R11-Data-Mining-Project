@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "precision": "source report rounded to 4 decimals",
+  "test_base": {
+    "Acc@1": 0.2105,
+    "Acc@5": 0.5166,
+    "Acc@10": 0.6425,
+    "Acc@20": 0.7297,
+    "MRR": 0.348
+  },
+  "test_reranked": {
+    "Acc@1": 0.2286,
+    "Acc@5": 0.5255,
+    "Acc@10": 0.6417,
+    "Acc@20": 0.7282,
+    "MRR": 0.3618
+  },
+  "val_base": {
+    "Acc@1": 0.2295,
+    "Acc@5": 0.5319,
+    "Acc@10": 0.6506,
+    "Acc@20": 0.736,
+    "MRR": 0.3648
+  },
+  "val_reranked": {
+    "Acc@1": 0.2435,
+    "Acc@5": 0.5429,
+    "Acc@10": 0.659,
+    "Acc@20": 0.7406,
+    "MRR": 0.3767
+  },
+  "best_cfg": {
+    "lambda_time": 0.967,
+    "lambda_user": 0.0644,
+    "lambda_dist": 0.6361,
+    "lambda_cl_sim": 0.9707,
+    "sigma_min_km": 0.5,
+    "tau_km": 10.73
+  },
+  "dataset": "NYC",
+  "report_path": "/kaggle/working/k1-poi/exp_scripts/results/NYC_seed42_20261119T055022_750170Z_20261119_062901.md"
+}

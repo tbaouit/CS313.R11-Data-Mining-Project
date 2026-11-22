@@ -1,0 +1,4 @@
+﻿dataset,epochs,search_trials,seed,batch_size,eval_batch_size,window_size,elapsed_seconds,gpus,device_used
+CA,100,20000,42,1024,512,1,5103.24,Tesla T4; Tesla T4,cuda:0
+NYC,100,20000,42,1024,512,1,2328.85,Tesla T4; Tesla T4,cuda:0
+TKY,100,20000,42,1024,512,1,7668.72,Tesla T4; Tesla T4,cuda:0

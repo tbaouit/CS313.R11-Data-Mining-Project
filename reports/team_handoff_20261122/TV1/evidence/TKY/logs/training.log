@@ -1,0 +1,274 @@
+DATA_PATH=data/processed/TKY_excluding_cold.pkl
+WINDOW_SIZE=1
+WINDOW_SAMPLING=recent
+DEVICE=cuda:0 DTYPE=torch.float32
+d_model=128 heads=4 layers=2 dropout=0.1 norm_first=True
+poi_emb_dim=128 cat_emb_dim=32 user_emb_dim=256 use_cat_emb=False use_user_emb=True use_positional_encoding=True
+use_tod_slot_embedding=True tod_slot_scales=[6, 12, 24] tod_slot_emb_dim=64
+use_geo_cell_embedding=True geo_cell_sizes_m=[500, 1000, 2000] geo_cell_emb_dim=64
+poi_ecl: use=True top_k=200 force_label_strategy=replace_lowest proj_dim=128 use_mlp_proj=False temperature=0.07 normalize=True loss_weight=1.0 negative_source=topk
+classifier_token_position=first
+batch_size=1024 eval_batch_size=512 lr=0.0003 wd=5e-06
+use_st_prior_re_ranker=True candidate_k=200 time_bins=24 alpha=1.0 lambda_time=0.3 lambda_user=0.5 lambda_dist=0.5 sigma_min_km=0.5 tau_km=-1.0
+#users=2263 #pois=7794 #cats=292 (pad_idx=0)
+Building ST-Prior tables from train split ...
+ST-Prior built: tau_p75_km=6.04
+#train_samples=288987 #val_samples=35232 #test_samples=34531
+[Epoch 1] train loss: 13.0921 (ce=7.8367 cl=5.2554 missing_label_rate=0.6415)
+[Epoch 1] val: Acc@1=0.0859 Acc@5=0.2138 Acc@10=0.2745 Acc@20=0.3410 MRR=0.1490
+New best val MRR: 0.1490, test deferred to end.
+[Epoch 2] train loss: 11.5966 (ce=6.5826 cl=5.0140 missing_label_rate=0.4042)
+[Epoch 2] val: Acc@1=0.1188 Acc@5=0.2905 Acc@10=0.3647 Acc@20=0.4316 MRR=0.2010
+New best val MRR: 0.2010, test deferred to end.
+[Epoch 3] train loss: 10.7583 (ce=5.8023 cl=4.9560 missing_label_rate=0.3009)
+[Epoch 3] val: Acc@1=0.1382 Acc@5=0.3321 Acc@10=0.4091 Acc@20=0.4852 MRR=0.2300
+New best val MRR: 0.2300, test deferred to end.
+[Epoch 4] train loss: 10.2408 (ce=5.3476 cl=4.8932 missing_label_rate=0.2451)
+[Epoch 4] val: Acc@1=0.1499 Acc@5=0.3567 Acc@10=0.4392 Acc@20=0.5170 MRR=0.2476
+New best val MRR: 0.2476, test deferred to end.
+[Epoch 5] train loss: 9.8952 (ce=5.0610 cl=4.8342 missing_label_rate=0.2120)
+[Epoch 5] val: Acc@1=0.1573 Acc@5=0.3743 Acc@10=0.4603 Acc@20=0.5400 MRR=0.2590
+New best val MRR: 0.2590, test deferred to end.
+[Epoch 6] train loss: 9.6401 (ce=4.8626 cl=4.7776 missing_label_rate=0.1901)
+[Epoch 6] val: Acc@1=0.1612 Acc@5=0.3852 Acc@10=0.4749 Acc@20=0.5546 MRR=0.2654
+New best val MRR: 0.2654, test deferred to end.
+[Epoch 7] train loss: 9.4356 (ce=4.7104 cl=4.7252 missing_label_rate=0.1727)
+[Epoch 7] val: Acc@1=0.1651 Acc@5=0.3952 Acc@10=0.4874 Acc@20=0.5658 MRR=0.2720
+New best val MRR: 0.2720, test deferred to end.
+[Epoch 8] train loss: 9.2662 (ce=4.5903 cl=4.6759 missing_label_rate=0.1610)
+[Epoch 8] val: Acc@1=0.1685 Acc@5=0.4012 Acc@10=0.4936 Acc@20=0.5740 MRR=0.2762
+New best val MRR: 0.2762, test deferred to end.
+[Epoch 9] train loss: 9.1216 (ce=4.4958 cl=4.6258 missing_label_rate=0.1517)
+[Epoch 9] val: Acc@1=0.1709 Acc@5=0.4057 Acc@10=0.5004 Acc@20=0.5812 MRR=0.2803
+New best val MRR: 0.2803, test deferred to end.
+[Epoch 10] train loss: 8.9986 (ce=4.4175 cl=4.5810 missing_label_rate=0.1438)
+[Epoch 10] val: Acc@1=0.1739 Acc@5=0.4107 Acc@10=0.5052 Acc@20=0.5866 MRR=0.2831
+New best val MRR: 0.2831, test deferred to end.
+[Epoch 11] train loss: 8.8887 (ce=4.3481 cl=4.5406 missing_label_rate=0.1365)
+[Epoch 11] val: Acc@1=0.1760 Acc@5=0.4156 Acc@10=0.5122 Acc@20=0.5935 MRR=0.2867
+New best val MRR: 0.2867, test deferred to end.
+[Epoch 12] train loss: 8.7912 (ce=4.2871 cl=4.5041 missing_label_rate=0.1310)
+[Epoch 12] val: Acc@1=0.1794 Acc@5=0.4179 Acc@10=0.5172 Acc@20=0.5978 MRR=0.2904
+New best val MRR: 0.2904, test deferred to end.
+[Epoch 13] train loss: 8.7041 (ce=4.2382 cl=4.4658 missing_label_rate=0.1263)
+[Epoch 13] val: Acc@1=0.1818 Acc@5=0.4212 Acc@10=0.5198 Acc@20=0.6024 MRR=0.2925
+New best val MRR: 0.2925, test deferred to end.
+[Epoch 14] train loss: 8.6246 (ce=4.1935 cl=4.4311 missing_label_rate=0.1218)
+[Epoch 14] val: Acc@1=0.1826 Acc@5=0.4248 Acc@10=0.5223 Acc@20=0.6045 MRR=0.2943
+New best val MRR: 0.2943, test deferred to end.
+[Epoch 15] train loss: 8.5519 (ce=4.1526 cl=4.3993 missing_label_rate=0.1186)
+[Epoch 15] val: Acc@1=0.1855 Acc@5=0.4280 Acc@10=0.5263 Acc@20=0.6061 MRR=0.2972
+New best val MRR: 0.2972, test deferred to end.
+[Epoch 16] train loss: 8.4844 (ce=4.1159 cl=4.3685 missing_label_rate=0.1137)
+[Epoch 16] val: Acc@1=0.1877 Acc@5=0.4317 Acc@10=0.5288 Acc@20=0.6105 MRR=0.2994
+New best val MRR: 0.2994, test deferred to end.
+[Epoch 17] train loss: 8.4221 (ce=4.0838 cl=4.3383 missing_label_rate=0.1116)
+[Epoch 17] val: Acc@1=0.1883 Acc@5=0.4337 Acc@10=0.5297 Acc@20=0.6119 MRR=0.3000
+New best val MRR: 0.3000, test deferred to end.
+[Epoch 18] train loss: 8.3648 (ce=4.0527 cl=4.3121 missing_label_rate=0.1083)
+[Epoch 18] val: Acc@1=0.1900 Acc@5=0.4355 Acc@10=0.5336 Acc@20=0.6151 MRR=0.3020
+New best val MRR: 0.3020, test deferred to end.
+[Epoch 19] train loss: 8.3033 (ce=4.0185 cl=4.2848 missing_label_rate=0.1055)
+[Epoch 19] val: Acc@1=0.1903 Acc@5=0.4365 Acc@10=0.5350 Acc@20=0.6153 MRR=0.3032
+New best val MRR: 0.3032, test deferred to end.
+[Epoch 20] train loss: 8.2540 (ce=3.9959 cl=4.2580 missing_label_rate=0.1033)
+[Epoch 20] val: Acc@1=0.1918 Acc@5=0.4391 Acc@10=0.5359 Acc@20=0.6171 MRR=0.3048
+New best val MRR: 0.3048, test deferred to end.
+[Epoch 21] train loss: 8.2107 (ce=3.9724 cl=4.2383 missing_label_rate=0.1012)
+[Epoch 21] val: Acc@1=0.1936 Acc@5=0.4404 Acc@10=0.5387 Acc@20=0.6204 MRR=0.3062
+New best val MRR: 0.3062, test deferred to end.
+[Epoch 22] train loss: 8.1587 (ce=3.9435 cl=4.2152 missing_label_rate=0.0988)
+[Epoch 22] val: Acc@1=0.1935 Acc@5=0.4404 Acc@10=0.5397 Acc@20=0.6215 MRR=0.3067
+New best val MRR: 0.3067, test deferred to end.
+[Epoch 23] train loss: 8.1224 (ce=3.9282 cl=4.1943 missing_label_rate=0.0967)
+[Epoch 23] val: Acc@1=0.1928 Acc@5=0.4416 Acc@10=0.5408 Acc@20=0.6236 MRR=0.3071
+New best val MRR: 0.3071, test deferred to end.
+[Epoch 24] train loss: 8.0765 (ce=3.9053 cl=4.1712 missing_label_rate=0.0949)
+[Epoch 24] val: Acc@1=0.1915 Acc@5=0.4401 Acc@10=0.5407 Acc@20=0.6210 MRR=0.3060
+[Epoch 25] train loss: 8.0433 (ce=3.8916 cl=4.1517 missing_label_rate=0.0934)
+[Epoch 25] val: Acc@1=0.1951 Acc@5=0.4436 Acc@10=0.5433 Acc@20=0.6255 MRR=0.3089
+New best val MRR: 0.3089, test deferred to end.
+[Epoch 26] train loss: 8.0073 (ce=3.8709 cl=4.1364 missing_label_rate=0.0918)
+[Epoch 26] val: Acc@1=0.1940 Acc@5=0.4456 Acc@10=0.5448 Acc@20=0.6256 MRR=0.3092
+New best val MRR: 0.3092, test deferred to end.
+[Epoch 27] train loss: 7.9711 (ce=3.8540 cl=4.1171 missing_label_rate=0.0899)
+[Epoch 27] val: Acc@1=0.1962 Acc@5=0.4447 Acc@10=0.5444 Acc@20=0.6259 MRR=0.3104
+New best val MRR: 0.3104, test deferred to end.
+[Epoch 28] train loss: 7.9310 (ce=3.8339 cl=4.0971 missing_label_rate=0.0883)
+[Epoch 28] val: Acc@1=0.1961 Acc@5=0.4489 Acc@10=0.5478 Acc@20=0.6288 MRR=0.3116
+New best val MRR: 0.3116, test deferred to end.
+[Epoch 29] train loss: 7.8988 (ce=3.8180 cl=4.0808 missing_label_rate=0.0876)
+[Epoch 29] val: Acc@1=0.1983 Acc@5=0.4475 Acc@10=0.5476 Acc@20=0.6293 MRR=0.3132
+New best val MRR: 0.3132, test deferred to end.
+[Epoch 30] train loss: 7.8666 (ce=3.8025 cl=4.0641 missing_label_rate=0.0860)
+[Epoch 30] val: Acc@1=0.1975 Acc@5=0.4491 Acc@10=0.5489 Acc@20=0.6293 MRR=0.3125
+[Epoch 31] train loss: 7.8363 (ce=3.7883 cl=4.0480 missing_label_rate=0.0847)
+[Epoch 31] val: Acc@1=0.1992 Acc@5=0.4498 Acc@10=0.5500 Acc@20=0.6304 MRR=0.3138
+New best val MRR: 0.3138, test deferred to end.
+[Epoch 32] train loss: 7.8112 (ce=3.7754 cl=4.0358 missing_label_rate=0.0835)
+[Epoch 32] val: Acc@1=0.1987 Acc@5=0.4502 Acc@10=0.5509 Acc@20=0.6326 MRR=0.3141
+New best val MRR: 0.3141, test deferred to end.
+[Epoch 33] train loss: 7.7757 (ce=3.7581 cl=4.0175 missing_label_rate=0.0824)
+[Epoch 33] val: Acc@1=0.2000 Acc@5=0.4488 Acc@10=0.5502 Acc@20=0.6318 MRR=0.3147
+New best val MRR: 0.3147, test deferred to end.
+[Epoch 34] train loss: 7.7571 (ce=3.7516 cl=4.0055 missing_label_rate=0.0816)
+[Epoch 34] val: Acc@1=0.2011 Acc@5=0.4519 Acc@10=0.5518 Acc@20=0.6339 MRR=0.3164
+New best val MRR: 0.3164, test deferred to end.
+[Epoch 35] train loss: 7.7270 (ce=3.7344 cl=3.9926 missing_label_rate=0.0801)
+[Epoch 35] val: Acc@1=0.2020 Acc@5=0.4518 Acc@10=0.5538 Acc@20=0.6343 MRR=0.3167
+New best val MRR: 0.3167, test deferred to end.
+[Epoch 36] train loss: 7.7017 (ce=3.7241 cl=3.9776 missing_label_rate=0.0793)
+[Epoch 36] val: Acc@1=0.2017 Acc@5=0.4510 Acc@10=0.5541 Acc@20=0.6344 MRR=0.3169
+New best val MRR: 0.3169, test deferred to end.
+[Epoch 37] train loss: 7.6824 (ce=3.7165 cl=3.9659 missing_label_rate=0.0782)
+[Epoch 37] val: Acc@1=0.2031 Acc@5=0.4542 Acc@10=0.5535 Acc@20=0.6358 MRR=0.3182
+New best val MRR: 0.3182, test deferred to end.
+[Epoch 38] train loss: 7.6589 (ce=3.7049 cl=3.9540 missing_label_rate=0.0775)
+[Epoch 38] val: Acc@1=0.2043 Acc@5=0.4550 Acc@10=0.5559 Acc@20=0.6350 MRR=0.3191
+New best val MRR: 0.3191, test deferred to end.
+[Epoch 39] train loss: 7.6286 (ce=3.6897 cl=3.9388 missing_label_rate=0.0760)
+[Epoch 39] val: Acc@1=0.2044 Acc@5=0.4550 Acc@10=0.5541 Acc@20=0.6356 MRR=0.3192
+New best val MRR: 0.3192, test deferred to end.
+[Epoch 40] train loss: 7.6113 (ce=3.6839 cl=3.9274 missing_label_rate=0.0755)
+[Epoch 40] val: Acc@1=0.2019 Acc@5=0.4546 Acc@10=0.5559 Acc@20=0.6364 MRR=0.3180
+[Epoch 41] train loss: 7.5899 (ce=3.6737 cl=3.9162 missing_label_rate=0.0748)
+[Epoch 41] val: Acc@1=0.2045 Acc@5=0.4540 Acc@10=0.5559 Acc@20=0.6376 MRR=0.3195
+New best val MRR: 0.3195, test deferred to end.
+[Epoch 42] train loss: 7.5694 (ce=3.6637 cl=3.9057 missing_label_rate=0.0735)
+[Epoch 42] val: Acc@1=0.2071 Acc@5=0.4556 Acc@10=0.5565 Acc@20=0.6375 MRR=0.3212
+New best val MRR: 0.3212, test deferred to end.
+[Epoch 43] train loss: 7.5500 (ce=3.6557 cl=3.8943 missing_label_rate=0.0737)
+[Epoch 43] val: Acc@1=0.2048 Acc@5=0.4564 Acc@10=0.5575 Acc@20=0.6378 MRR=0.3202
+[Epoch 44] train loss: 7.5328 (ce=3.6499 cl=3.8829 missing_label_rate=0.0731)
+[Epoch 44] val: Acc@1=0.2059 Acc@5=0.4564 Acc@10=0.5582 Acc@20=0.6385 MRR=0.3209
+[Epoch 45] train loss: 7.5100 (ce=3.6362 cl=3.8737 missing_label_rate=0.0719)
+[Epoch 45] val: Acc@1=0.2048 Acc@5=0.4579 Acc@10=0.5598 Acc@20=0.6407 MRR=0.3208
+[Epoch 46] train loss: 7.4900 (ce=3.6279 cl=3.8621 missing_label_rate=0.0713)
+[Epoch 46] val: Acc@1=0.2062 Acc@5=0.4572 Acc@10=0.5586 Acc@20=0.6395 MRR=0.3214
+New best val MRR: 0.3214, test deferred to end.
+[Epoch 47] train loss: 7.4728 (ce=3.6195 cl=3.8533 missing_label_rate=0.0697)
+[Epoch 47] val: Acc@1=0.2077 Acc@5=0.4588 Acc@10=0.5596 Acc@20=0.6395 MRR=0.3223
+New best val MRR: 0.3223, test deferred to end.
+[Epoch 48] train loss: 7.4578 (ce=3.6147 cl=3.8431 missing_label_rate=0.0705)
+[Epoch 48] val: Acc@1=0.2080 Acc@5=0.4593 Acc@10=0.5606 Acc@20=0.6415 MRR=0.3231
+New best val MRR: 0.3231, test deferred to end.
+[Epoch 49] train loss: 7.4348 (ce=3.6033 cl=3.8315 missing_label_rate=0.0690)
+[Epoch 49] val: Acc@1=0.2069 Acc@5=0.4589 Acc@10=0.5606 Acc@20=0.6411 MRR=0.3224
+[Epoch 50] train loss: 7.4173 (ce=3.5958 cl=3.8215 missing_label_rate=0.0684)
+[Epoch 50] val: Acc@1=0.2071 Acc@5=0.4603 Acc@10=0.5605 Acc@20=0.6410 MRR=0.3230
+[Epoch 51] train loss: 7.4085 (ce=3.5936 cl=3.8150 missing_label_rate=0.0689)
+[Epoch 51] val: Acc@1=0.2072 Acc@5=0.4598 Acc@10=0.5587 Acc@20=0.6408 MRR=0.3225
+[Epoch 52] train loss: 7.3876 (ce=3.5841 cl=3.8035 missing_label_rate=0.0675)
+[Epoch 52] val: Acc@1=0.2086 Acc@5=0.4591 Acc@10=0.5601 Acc@20=0.6425 MRR=0.3239
+New best val MRR: 0.3239, test deferred to end.
+[Epoch 53] train loss: 7.3670 (ce=3.5746 cl=3.7924 missing_label_rate=0.0671)
+[Epoch 53] val: Acc@1=0.2080 Acc@5=0.4590 Acc@10=0.5601 Acc@20=0.6421 MRR=0.3232
+[Epoch 54] train loss: 7.3548 (ce=3.5684 cl=3.7864 missing_label_rate=0.0663)
+[Epoch 54] val: Acc@1=0.2073 Acc@5=0.4602 Acc@10=0.5618 Acc@20=0.6439 MRR=0.3232
+[Epoch 55] train loss: 7.3444 (ce=3.5660 cl=3.7784 missing_label_rate=0.0659)
+[Epoch 55] val: Acc@1=0.2075 Acc@5=0.4606 Acc@10=0.5621 Acc@20=0.6423 MRR=0.3234
+[Epoch 56] train loss: 7.3272 (ce=3.5572 cl=3.7699 missing_label_rate=0.0650)
+[Epoch 56] val: Acc@1=0.2093 Acc@5=0.4618 Acc@10=0.5618 Acc@20=0.6431 MRR=0.3248
+New best val MRR: 0.3248, test deferred to end.
+[Epoch 57] train loss: 7.3052 (ce=3.5456 cl=3.7596 missing_label_rate=0.0652)
+[Epoch 57] val: Acc@1=0.2109 Acc@5=0.4624 Acc@10=0.5623 Acc@20=0.6445 MRR=0.3259
+New best val MRR: 0.3259, test deferred to end.
+[Epoch 58] train loss: 7.2967 (ce=3.5433 cl=3.7535 missing_label_rate=0.0643)
+[Epoch 58] val: Acc@1=0.2088 Acc@5=0.4624 Acc@10=0.5624 Acc@20=0.6454 MRR=0.3247
+[Epoch 59] train loss: 7.2810 (ce=3.5360 cl=3.7449 missing_label_rate=0.0634)
+[Epoch 59] val: Acc@1=0.2095 Acc@5=0.4630 Acc@10=0.5634 Acc@20=0.6453 MRR=0.3255
+[Epoch 60] train loss: 7.2641 (ce=3.5270 cl=3.7371 missing_label_rate=0.0629)
+[Epoch 60] val: Acc@1=0.2086 Acc@5=0.4627 Acc@10=0.5634 Acc@20=0.6443 MRR=0.3254
+[Epoch 61] train loss: 7.2527 (ce=3.5237 cl=3.7290 missing_label_rate=0.0624)
+[Epoch 61] val: Acc@1=0.2082 Acc@5=0.4632 Acc@10=0.5641 Acc@20=0.6446 MRR=0.3248
+[Epoch 62] train loss: 7.2400 (ce=3.5201 cl=3.7200 missing_label_rate=0.0627)
+[Epoch 62] val: Acc@1=0.2101 Acc@5=0.4634 Acc@10=0.5634 Acc@20=0.6450 MRR=0.3259
+[Epoch 63] train loss: 7.2304 (ce=3.5156 cl=3.7147 missing_label_rate=0.0622)
+[Epoch 63] val: Acc@1=0.2097 Acc@5=0.4634 Acc@10=0.5646 Acc@20=0.6443 MRR=0.3255
+[Epoch 64] train loss: 7.2160 (ce=3.5094 cl=3.7066 missing_label_rate=0.0620)
+[Epoch 64] val: Acc@1=0.2100 Acc@5=0.4630 Acc@10=0.5640 Acc@20=0.6454 MRR=0.3260
+New best val MRR: 0.3260, test deferred to end.
+[Epoch 65] train loss: 7.2004 (ce=3.5011 cl=3.6993 missing_label_rate=0.0612)
+[Epoch 65] val: Acc@1=0.2106 Acc@5=0.4647 Acc@10=0.5655 Acc@20=0.6460 MRR=0.3268
+New best val MRR: 0.3268, test deferred to end.
+[Epoch 66] train loss: 7.1872 (ce=3.4941 cl=3.6931 missing_label_rate=0.0611)
+[Epoch 66] val: Acc@1=0.2096 Acc@5=0.4627 Acc@10=0.5640 Acc@20=0.6455 MRR=0.3260
+[Epoch 67] train loss: 7.1777 (ce=3.4921 cl=3.6857 missing_label_rate=0.0602)
+[Epoch 67] val: Acc@1=0.2105 Acc@5=0.4638 Acc@10=0.5650 Acc@20=0.6464 MRR=0.3264
+[Epoch 68] train loss: 7.1658 (ce=3.4877 cl=3.6782 missing_label_rate=0.0601)
+[Epoch 68] val: Acc@1=0.2104 Acc@5=0.4640 Acc@10=0.5654 Acc@20=0.6466 MRR=0.3267
+[Epoch 69] train loss: 7.1537 (ce=3.4819 cl=3.6718 missing_label_rate=0.0602)
+[Epoch 69] val: Acc@1=0.2120 Acc@5=0.4645 Acc@10=0.5657 Acc@20=0.6462 MRR=0.3275
+New best val MRR: 0.3275, test deferred to end.
+[Epoch 70] train loss: 7.1434 (ce=3.4771 cl=3.6662 missing_label_rate=0.0591)
+[Epoch 70] val: Acc@1=0.2142 Acc@5=0.4658 Acc@10=0.5661 Acc@20=0.6467 MRR=0.3291
+New best val MRR: 0.3291, test deferred to end.
+[Epoch 71] train loss: 7.1323 (ce=3.4737 cl=3.6587 missing_label_rate=0.0588)
+[Epoch 71] val: Acc@1=0.2127 Acc@5=0.4653 Acc@10=0.5669 Acc@20=0.6478 MRR=0.3280
+[Epoch 72] train loss: 7.1167 (ce=3.4665 cl=3.6503 missing_label_rate=0.0583)
+[Epoch 72] val: Acc@1=0.2144 Acc@5=0.4645 Acc@10=0.5671 Acc@20=0.6471 MRR=0.3292
+New best val MRR: 0.3292, test deferred to end.
+[Epoch 73] train loss: 7.1031 (ce=3.4585 cl=3.6446 missing_label_rate=0.0579)
+[Epoch 73] val: Acc@1=0.2121 Acc@5=0.4653 Acc@10=0.5662 Acc@20=0.6480 MRR=0.3283
+[Epoch 74] train loss: 7.0957 (ce=3.4571 cl=3.6386 missing_label_rate=0.0576)
+[Epoch 74] val: Acc@1=0.2122 Acc@5=0.4658 Acc@10=0.5672 Acc@20=0.6472 MRR=0.3282
+[Epoch 75] train loss: 7.0838 (ce=3.4517 cl=3.6322 missing_label_rate=0.0579)
+[Epoch 75] val: Acc@1=0.2107 Acc@5=0.4641 Acc@10=0.5669 Acc@20=0.6471 MRR=0.3273
+[Epoch 76] train loss: 7.0732 (ce=3.4490 cl=3.6242 missing_label_rate=0.0571)
+[Epoch 76] val: Acc@1=0.2134 Acc@5=0.4652 Acc@10=0.5671 Acc@20=0.6480 MRR=0.3290
+[Epoch 77] train loss: 7.0613 (ce=3.4421 cl=3.6192 missing_label_rate=0.0570)
+[Epoch 77] val: Acc@1=0.2121 Acc@5=0.4657 Acc@10=0.5666 Acc@20=0.6481 MRR=0.3289
+[Epoch 78] train loss: 7.0557 (ce=3.4415 cl=3.6142 missing_label_rate=0.0564)
+[Epoch 78] val: Acc@1=0.2134 Acc@5=0.4665 Acc@10=0.5680 Acc@20=0.6480 MRR=0.3292
+[Epoch 79] train loss: 7.0431 (ce=3.4340 cl=3.6090 missing_label_rate=0.0566)
+[Epoch 79] val: Acc@1=0.2111 Acc@5=0.4656 Acc@10=0.5656 Acc@20=0.6479 MRR=0.3279
+[Epoch 80] train loss: 7.0299 (ce=3.4301 cl=3.5998 missing_label_rate=0.0561)
+[Epoch 80] val: Acc@1=0.2135 Acc@5=0.4662 Acc@10=0.5674 Acc@20=0.6472 MRR=0.3293
+New best val MRR: 0.3293, test deferred to end.
+[Epoch 81] train loss: 7.0187 (ce=3.4234 cl=3.5953 missing_label_rate=0.0558)
+[Epoch 81] val: Acc@1=0.2120 Acc@5=0.4659 Acc@10=0.5677 Acc@20=0.6484 MRR=0.3284
+[Epoch 82] train loss: 7.0129 (ce=3.4218 cl=3.5911 missing_label_rate=0.0556)
+[Epoch 82] val: Acc@1=0.2104 Acc@5=0.4653 Acc@10=0.5674 Acc@20=0.6477 MRR=0.3275
+[Epoch 83] train loss: 7.0043 (ce=3.4197 cl=3.5846 missing_label_rate=0.0556)
+[Epoch 83] val: Acc@1=0.2134 Acc@5=0.4646 Acc@10=0.5662 Acc@20=0.6467 MRR=0.3288
+[Epoch 84] train loss: 6.9934 (ce=3.4134 cl=3.5800 missing_label_rate=0.0553)
+[Epoch 84] val: Acc@1=0.2132 Acc@5=0.4659 Acc@10=0.5673 Acc@20=0.6477 MRR=0.3293
+[Epoch 85] train loss: 6.9861 (ce=3.4123 cl=3.5738 missing_label_rate=0.0549)
+[Epoch 85] val: Acc@1=0.2126 Acc@5=0.4672 Acc@10=0.5674 Acc@20=0.6486 MRR=0.3291
+[Epoch 86] train loss: 6.9701 (ce=3.4036 cl=3.5665 missing_label_rate=0.0541)
+[Epoch 86] val: Acc@1=0.2124 Acc@5=0.4680 Acc@10=0.5678 Acc@20=0.6486 MRR=0.3291
+[Epoch 87] train loss: 6.9640 (ce=3.4003 cl=3.5636 missing_label_rate=0.0540)
+[Epoch 87] val: Acc@1=0.2124 Acc@5=0.4666 Acc@10=0.5670 Acc@20=0.6480 MRR=0.3287
+[Epoch 88] train loss: 6.9528 (ce=3.3956 cl=3.5572 missing_label_rate=0.0536)
+[Epoch 88] val: Acc@1=0.2138 Acc@5=0.4655 Acc@10=0.5672 Acc@20=0.6478 MRR=0.3297
+New best val MRR: 0.3297, test deferred to end.
+[Epoch 89] train loss: 6.9514 (ce=3.3976 cl=3.5538 missing_label_rate=0.0534)
+[Epoch 89] val: Acc@1=0.2145 Acc@5=0.4688 Acc@10=0.5690 Acc@20=0.6483 MRR=0.3305
+New best val MRR: 0.3305, test deferred to end.
+[Epoch 90] train loss: 6.9345 (ce=3.3891 cl=3.5455 missing_label_rate=0.0533)
+[Epoch 90] val: Acc@1=0.2134 Acc@5=0.4675 Acc@10=0.5679 Acc@20=0.6477 MRR=0.3299
+[Epoch 91] train loss: 6.9279 (ce=3.3844 cl=3.5436 missing_label_rate=0.0529)
+[Epoch 91] val: Acc@1=0.2151 Acc@5=0.4678 Acc@10=0.5688 Acc@20=0.6496 MRR=0.3311
+New best val MRR: 0.3311, test deferred to end.
+[Epoch 92] train loss: 6.9220 (ce=3.3842 cl=3.5379 missing_label_rate=0.0523)
+[Epoch 92] val: Acc@1=0.2150 Acc@5=0.4671 Acc@10=0.5686 Acc@20=0.6485 MRR=0.3308
+[Epoch 93] train loss: 6.9096 (ce=3.3774 cl=3.5322 missing_label_rate=0.0523)
+[Epoch 93] val: Acc@1=0.2141 Acc@5=0.4675 Acc@10=0.5675 Acc@20=0.6480 MRR=0.3303
+[Epoch 94] train loss: 6.9099 (ce=3.3800 cl=3.5299 missing_label_rate=0.0524)
+[Epoch 94] val: Acc@1=0.2151 Acc@5=0.4669 Acc@10=0.5688 Acc@20=0.6486 MRR=0.3310
+[Epoch 95] train loss: 6.8970 (ce=3.3733 cl=3.5237 missing_label_rate=0.0518)
+[Epoch 95] val: Acc@1=0.2141 Acc@5=0.4674 Acc@10=0.5688 Acc@20=0.6480 MRR=0.3304
+[Epoch 96] train loss: 6.8891 (ce=3.3698 cl=3.5193 missing_label_rate=0.0517)
+[Epoch 96] val: Acc@1=0.2148 Acc@5=0.4683 Acc@10=0.5682 Acc@20=0.6492 MRR=0.3312
+New best val MRR: 0.3312, test deferred to end.
+[Epoch 97] train loss: 6.8812 (ce=3.3666 cl=3.5147 missing_label_rate=0.0514)
+[Epoch 97] val: Acc@1=0.2144 Acc@5=0.4689 Acc@10=0.5687 Acc@20=0.6493 MRR=0.3310
+[Epoch 98] train loss: 6.8760 (ce=3.3669 cl=3.5091 missing_label_rate=0.0515)
+[Epoch 98] val: Acc@1=0.2149 Acc@5=0.4682 Acc@10=0.5682 Acc@20=0.6489 MRR=0.3311
+[Epoch 99] train loss: 6.8706 (ce=3.3619 cl=3.5087 missing_label_rate=0.0509)
+[Epoch 99] val: Acc@1=0.2159 Acc@5=0.4685 Acc@10=0.5700 Acc@20=0.6503 MRR=0.3318
+New best val MRR: 0.3318, test deferred to end.
+[Epoch 100] train loss: 6.8591 (ce=3.3584 cl=3.5006 missing_label_rate=0.0510)
+[Epoch 100] val: Acc@1=0.2150 Acc@5=0.4675 Acc@10=0.5687 Acc@20=0.6497 MRR=0.3314
+Final test (best epoch 99, elapsed 6997.81s): Acc@1=0.2406 Acc@5=0.4961 Acc@10=0.5970 Acc@20=0.6750 MRR=0.3579
+Saved best checkpoint to /kaggle/working/k1-poi/exp_scripts/results/checkpoints/st_prior_backbone_processed_TKY_excluding_cold_k1_20261119_062922.ckpt

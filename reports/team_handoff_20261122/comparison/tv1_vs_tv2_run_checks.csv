@@ -1,0 +1,4 @@
+﻿dataset,history_rows_tv1,history_rows_tv2,history_cells_compared,history_cells_different,log_lines_tv1,log_lines_tv2,log_lines_different_after_normalizing_device_elapsed_path,best_epoch_tv1,best_epoch_tv2,report_fields_identical,best_cfg_identical,elapsed_seconds_tv1,elapsed_seconds_tv2,device_tv1,device_tv2,sha256_data_identical
+CA,100,100,900,0,257,257,0,91,91,True,True,5103.24,5202.0,cuda:0,cuda:1,True
+NYC,100,100,900,0,262,262,0,65,65,True,True,2328.85,2322.0,cuda:0,cuda:1,True
+TKY,100,100,900,0,274,274,0,99,99,True,True,7668.72,7860.0,cuda:0,cuda:0,True

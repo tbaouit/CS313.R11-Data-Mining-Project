@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "precision": "source report rounded to 4 decimals",
+  "test_base": {
+    "Acc@1": 0.1608,
+    "Acc@5": 0.3474,
+    "Acc@10": 0.4351,
+    "Acc@20": 0.52,
+    "MRR": 0.2527
+  },
+  "test_reranked": {
+    "Acc@1": 0.1777,
+    "Acc@5": 0.3602,
+    "Acc@10": 0.4438,
+    "Acc@20": 0.528,
+    "MRR": 0.2663
+  },
+  "val_base": {
+    "Acc@1": 0.1654,
+    "Acc@5": 0.3723,
+    "Acc@10": 0.4596,
+    "Acc@20": 0.543,
+    "MRR": 0.2635
+  },
+  "val_reranked": {
+    "Acc@1": 0.1872,
+    "Acc@5": 0.3844,
+    "Acc@10": 0.4675,
+    "Acc@20": 0.5461,
+    "MRR": 0.2808
+  },
+  "best_cfg": {
+    "lambda_time": 0.9945,
+    "lambda_user": 0.0036,
+    "lambda_dist": 0.0173,
+    "lambda_cl_sim": 0.9569,
+    "sigma_min_km": 0.5,
+    "tau_km": 12.65
+  },
+  "dataset": "CA",
+  "report_path": "/kaggle/working/CS313.R11-Data-Mining-Project/exp_scripts/results/CA_seed42_mine_20261122_072244.md"
+}
